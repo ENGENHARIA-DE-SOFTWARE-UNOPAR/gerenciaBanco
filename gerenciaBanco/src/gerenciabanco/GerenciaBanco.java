@@ -41,7 +41,7 @@ public class GerenciaBanco {
         
               //controle de erro
             if ("opcao"  == null){//caso o usuario cancele a opção
-                JOptionPane.Dialog(null, "Você cancelou a operação");
+                JOptionPane.showMessageDialog(null, "Você cancelou a operação");
                 break;            
             }        
         }
