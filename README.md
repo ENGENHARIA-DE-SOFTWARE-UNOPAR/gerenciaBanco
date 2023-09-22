@@ -4,3 +4,12 @@
 
 
 <h3> * Faz uso da funcionalidade <code> .gitignore </code>, para que o repositório fique enxuto.</h3>
+
+
+
+
+<h3>SOFTWARES:</h3>
+<ul>
+<li> Atom </li>
+<li> Netbeans </li>
+</ul>
