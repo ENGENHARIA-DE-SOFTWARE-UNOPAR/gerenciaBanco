@@ -26,3 +26,5 @@
 *.gnuplot
 *.gz
 /gerenciaBanco/nbproject/private/
+/gerenciaBanco/build/
+/gerenciaBanco/dist/

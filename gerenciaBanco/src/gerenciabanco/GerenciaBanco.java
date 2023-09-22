@@ -1,14 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package gerenciabanco;
 
 /**
  *
- * @author AULA-1
+ * @author Natan Ogliari
  */
 public class GerenciaBanco {
+    
+    
+    public static class cliente{
+        String nome;
+        int cpf;
+        String conta;
+        
+        
+        public void Cliente(){
+            //addPila();
+    
+        }
+    
+    }
 
     /**
      * @param args the command line arguments
