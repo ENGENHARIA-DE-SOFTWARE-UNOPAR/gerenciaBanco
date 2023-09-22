@@ -28,3 +28,7 @@
 /gerenciaBanco/nbproject/private/
 /gerenciaBanco/build/
 /gerenciaBanco/dist/
+
+*.xml
+*.mf
+*.properties
