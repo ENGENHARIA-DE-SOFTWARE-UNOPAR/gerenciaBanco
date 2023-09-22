@@ -25,3 +25,4 @@
 *.lot
 *.gnuplot
 *.gz
+/gerenciaBanco/nbproject/private/
