@@ -31,10 +31,14 @@ public class GerenciaBanco {
      */
     public static void main(String[] args) {
        
+        ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jfif");
+        //JOptionPane.showMes
+        JOptionPane.showMessageDialog(null,
+                "Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);
         while(true){
             // Scanner menu = new Scanner(System.in);// habilita a leitura pelo teclado
-            JOptionPane.showMessageDialog(null,"Bem vindo ao banco Saracura do Banhado\n");
-            String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n");
+            
+            String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
         
               //conversão de String para int
             int control = Integer.parseInt(opcao);
@@ -50,7 +54,7 @@ public class GerenciaBanco {
             }
             switch (control){
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Consulta saldo!.");
+                    JOptionPane.showMessageDialog(null, "Consulta saldo.");
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null, "Realizar um deposito.");
@@ -59,7 +63,7 @@ public class GerenciaBanco {
                     JOptionPane.showMessageDialog(null,"Realiza um saque.");
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null,"Opção invalida!");
+                    JOptionPane.showMessageDialog(null,"Opção invalida.");
                     break;
             }
         }
