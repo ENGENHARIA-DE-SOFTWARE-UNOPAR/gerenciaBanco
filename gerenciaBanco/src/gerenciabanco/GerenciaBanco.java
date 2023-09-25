@@ -41,9 +41,27 @@ public class GerenciaBanco {
         
               //controle de erro
             if ("opcao"  == null){//caso o usuario cancele a opção
-                JOptionPane.showMessageDialog(null, "Você cancelou a operação");
+                //JOptionPane.showMessageDialog(null, "Você cancelou a operação");
                 break;            
-            }        
+            }
+            if (control == 4){//para sair da operação
+                JOptionPane.showMessageDialog(null, "Volte sempre\nTenha um bom dia!.");
+                break;
+            }
+            switch (control){
+                case 1:
+                    JOptionPane.showMessageDialog(null, "Consulta saldo!.");
+                    break;
+                case 2:
+                    JOptionPane.showMessageDialog(null, "Realizar um deposito.");
+                    break;
+                case 3:
+                    JOptionPane.showMessageDialog(null,"Realiza um saque.");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null,"Opção invalida!");
+                    break;
+            }
         }
                
     }
