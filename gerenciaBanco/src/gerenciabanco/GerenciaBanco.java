@@ -16,7 +16,7 @@ public class GerenciaBanco {
     public static class cliente{
         String nome;
         String sobrenome;
-        int cpf;
+        String cpf;
         String conta;
         
         
@@ -39,13 +39,14 @@ public class GerenciaBanco {
        
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
         JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
-        while(true){
-            // Scanner menu = new Scanner(System.in);// habilita a leitura pelo teclado
-            cliente cliente = new cliente();
-            
-            cliente.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.");
-           
-            
+        
+        cliente cliente = new cliente();
+        
+        cliente.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
+        cliente.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
+        cliente.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
+        
+        while(true){            
             String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
             //conversão de String para int
             int control = Integer.parseInt(opcao);
@@ -56,7 +57,7 @@ public class GerenciaBanco {
                 break;            
             }
             if (control == 4){//para sair da operação
-                JOptionPane.showMessageDialog(null, "Volte sempre\nTenha um bom dia!.");
+                JOptionPane.showMessageDialog(null, "Volte sempre "+cliente.nome +cliente.sobrenome+"\nTenha um bom dia!.");
                 break;
             }
             switch (control){
