@@ -12,16 +12,22 @@ import java.lang.Integer;
  */
 public class GerenciaBanco {
     
-    
+        
     public static class cliente{
         String nome;
+        String sobrenome;
         int cpf;
         String conta;
         
         
-        public void Cliente(){
-            //addPila();
-    
+        public void Conta(){
+            int numConta;
+            String titularConta;
+            double saldo;
+        }    
+        public void depositaSaldo(double pilas, String titularConta){
+            int z;
+                   
         }
     
     }
@@ -35,10 +41,13 @@ public class GerenciaBanco {
         JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
         while(true){
             // Scanner menu = new Scanner(System.in);// habilita a leitura pelo teclado
+            cliente cliente = new cliente();
+            
+            cliente.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.");
+           
             
             String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
-        
-              //conversão de String para int
+            //conversão de String para int
             int control = Integer.parseInt(opcao);
         
               //controle de erro
