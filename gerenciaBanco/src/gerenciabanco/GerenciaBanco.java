@@ -54,14 +54,14 @@ public class GerenciaBanco {
         
         cliente.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
         cliente.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
-        
+        cliente.saldo = "445";
         while(true){ //InterruptedIOException
             
             //try{
             String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
             //conversão de String para int
             int control = Integer.parseInt(opcao);
-            /** Object[] itens = {"Saque","Consulta Saldo","Realiza Saque","Sair"};//!<Para melhorias
+            /** Object[] itens = {"Saque","Consulta Saldo","Realiza Saque","Sair"};//!<Para melhorias>
             Object valorSelecionado = JOptionPane.showInputDialog(null,"Escolha um item", "Opçao",JOptionPane.INFORMATION_MESSAGE, null,itens, itens [0]);
             } */
             
@@ -79,7 +79,7 @@ public class GerenciaBanco {
             switch (control){
                 case 1:
                     JOptionPane.showMessageDialog(null,"Consulta saldo.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
-                    
+                    JOptionPane.showMessageDialog(null,"Seu saldo atual é de: R$" +cliente.saldo, cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     break;
                 case 2:
                     JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
