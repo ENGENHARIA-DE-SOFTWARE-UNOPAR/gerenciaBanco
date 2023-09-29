@@ -6,6 +6,8 @@ import java.util.*;
 import javax.swing.*;
 import java.awt.*;
 import java.lang.Integer;
+import java.lang.Exception;
+import java.lang.Error;
 /**
  *
  * @author Natan Ogliari
@@ -72,17 +74,23 @@ public class GerenciaBanco {
                 case 2:
                     JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     int pilaDeposito = Integer.parseInt(JOptionPane.showInputDialog(null,"Informa a quantidade em Reais (R$) a ser depositado na conta do "+cliente.nome+" "+cliente.sobrenome));
-                    
-                    
-                    JOptionPane.showMessageDialog(null,"Seu Saldo é ", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
-                    
+                    //implementar regra
+                    try {
+                        JOptionPane.showMessageDialog(null,"Seu Saldo é ", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
+                    }
+                    //NumberFormatException e //InputMismatchException e 
+                    catch (InputMismatchException erro1) {
+                        JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n ERRO:", "ERRO", JOptionPane.INFORMATION_MESSAGE, icon);
+                    }
+                                       
                     break;
                 case 3:
                     JOptionPane.showMessageDialog(null,"Realiza um saque.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null,"Opção invalida.");
+                    JOptionPane.showMessageDialog(null,"Opção invalida.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
+                    
                     break;
             }
         }
