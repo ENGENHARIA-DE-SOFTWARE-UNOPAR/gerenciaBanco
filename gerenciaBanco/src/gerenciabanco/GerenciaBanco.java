@@ -44,20 +44,30 @@ public class GerenciaBanco {
         
         cliente cliente = new cliente();
         
-        cliente.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
+        try {
+            cliente.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
+            
+        }
+        catch (NullPointerException e){
+            JOptionPane.showMessageDialog(null, "Entre com um nome válido.");
+        }
+        
         cliente.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
         cliente.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
         
-        while(true){            
+        while(true){ //InterruptedIOException
+            
+            //try{
             String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
             //conversão de String para int
-            
-            //Object[] itens = {"Saque","Consulta Saldo","Realiza Saque","Sair"};//!<Para melhorias
-            //Object valorSelecionado = JOptionPane.showInputDialog(null,"Escolha um item", "Opçao",JOptionPane.INFORMATION_MESSAGE, null,itens, itens [0]);
-            
             int control = Integer.parseInt(opcao);
-        
-              //controle de erro
+            /** Object[] itens = {"Saque","Consulta Saldo","Realiza Saque","Sair"};//!<Para melhorias
+            Object valorSelecionado = JOptionPane.showInputDialog(null,"Escolha um item", "Opçao",JOptionPane.INFORMATION_MESSAGE, null,itens, itens [0]);
+            } */
+            
+            
+      
+            
             if ("opcao"  == null){//caso o usuario cancele a opção
                 JOptionPane.showMessageDialog(null, "Você cancelou a operação");
                 break;            
