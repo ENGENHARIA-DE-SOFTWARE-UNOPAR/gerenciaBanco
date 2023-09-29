@@ -74,14 +74,14 @@ public class GerenciaBanco {
                 case 2:
                     JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     
-                    //implementar regra
-                    try {
+                    
+                    try {// verifica se a entrada e do tipo numeral
                         int pilaDeposito = Integer.parseInt(JOptionPane.showInputDialog(null,"Informa a quantidade em Reais (R$) a ser depositado na conta do "+cliente.nome+" "+cliente.sobrenome));
                         JOptionPane.showMessageDialog(null,"Seu Saldo é ", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
                     }
-                    //NumberFormatException e //InputMismatchException e 
-                    catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n ERRO:", "ERRO", JOptionPane.INFORMATION_MESSAGE, icon);
+                    
+                    catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
+                        JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
                     }
                                        
                     break;
