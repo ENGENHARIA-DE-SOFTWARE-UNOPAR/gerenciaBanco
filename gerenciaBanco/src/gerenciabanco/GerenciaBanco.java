@@ -33,7 +33,7 @@ public class GerenciaBanco {
         public void depositaSaldo(int pilas, String titularConta){
             
             //this.saldo += pilas;
-            JOptionPane.showMessageDialog(null,"Seu Saldo é ", this.saldo, JOptionPane.INFORMATION_MESSAGE, this.icon);
+            //JOptionPane.showMessageDialog(null,"Seu Saldo é ", this.saldo, JOptionPane.INFORMATION_MESSAGE, this.icon);
                    
         }
     
@@ -59,7 +59,7 @@ public class GerenciaBanco {
         
         cliente.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
         cliente.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
-        cliente.saldo = "445";
+        cliente.saldo = "445";//remover
         while(true){ //InterruptedIOException
             
             //try{
@@ -91,8 +91,10 @@ public class GerenciaBanco {
                     
                     try {// verifica se a entrada e do tipo numeral
                         int pilaDeposito = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+cliente.nome+" "+cliente.sobrenome));
-                        
-                        //JOptionPane.showMessageDialog(null,"Seu Saldo é ", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
+                        //depositaSaldo(pilaDeposito,cliente.nome);
+                        pilaDeposito +=(Integer.parseInt(cliente.saldo));//converte para inteiro
+                        cliente.saldo =  Integer.toString(pilaDeposito);//converte para string
+                        JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+cliente.saldo+" Reais", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
                     }
                     
                     catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
