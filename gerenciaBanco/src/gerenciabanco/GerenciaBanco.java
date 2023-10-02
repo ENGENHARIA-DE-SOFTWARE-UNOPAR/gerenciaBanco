@@ -21,14 +21,19 @@ public class GerenciaBanco {
         String cpf;
         String conta;
         String saldo;
-        
+        ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
         
         public void Conta(){
             int numConta;
             double saldo;
         }    
-        public void depositaSaldo(double pilas, String titularConta){
-            int z;
+         /**
+        * @param args Pilas a ser depositado & nome da conta
+        */
+        public void depositaSaldo(int pilas, String titularConta){
+            
+            //this.saldo += pilas;
+            //JOptionPane.showMessageDialog(null,"Seu Saldo é ", this.saldo, JOptionPane.INFORMATION_MESSAGE, this.icon);
                    
         }
     
@@ -40,10 +45,10 @@ public class GerenciaBanco {
     public static void main(String[] args) {
        
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
-        JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
         
         cliente cliente = new cliente();
-        
+        JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
+
         try {
             cliente.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
             
@@ -54,7 +59,7 @@ public class GerenciaBanco {
         
         cliente.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
         cliente.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
-        cliente.saldo = "445";
+        cliente.saldo = "445";//remover
         while(true){ //InterruptedIOException
             
             //try{
@@ -82,12 +87,14 @@ public class GerenciaBanco {
                     JOptionPane.showMessageDialog(null,"Seu saldo atual é de: R$" +cliente.saldo, cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
-                    
+                    JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente.nome+" "+cliente.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);                
                     
                     try {// verifica se a entrada e do tipo numeral
                         int pilaDeposito = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+cliente.nome+" "+cliente.sobrenome));
-                        JOptionPane.showMessageDialog(null,"Seu Saldo é ", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
+                        //depositaSaldo(pilaDeposito,cliente.nome);
+                        pilaDeposito +=(Integer.parseInt(cliente.saldo));//converte para inteiro
+                        cliente.saldo =  Integer.toString(pilaDeposito);//converte para string
+                        JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+cliente.saldo+" Reais", cliente.saldo, JOptionPane.INFORMATION_MESSAGE, icon);
                     }
                     
                     catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
