@@ -6,6 +6,12 @@
 ## Faz uso da funcionalidade <code> .gitignore </code>, para que o repositório fique enxuto.
 
 
+### Bibliotecas usadas ~~~JAVA~~
+'''
+import java.awt
+
+'''
+
 
 
 ## SOFTWARES:
