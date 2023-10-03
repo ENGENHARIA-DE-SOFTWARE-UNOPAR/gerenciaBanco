@@ -28,14 +28,12 @@ public class GerenciaBanco {
           
          /**
         * @param nome da conta a ser depositado
-        * @param pilas valor a ser depositado 
+        * 
         * @return 1 se deu certo e 0 se ocorreu um erro
         */
-        public int depositaPila(double pilas, String nome){
+        public void depositaPila(double pilas, String nome){
             
-            //this.saldo += pilas;
-            //JOptionPane.showMessageDialog(null,"Seu Saldo é ", this.saldo, JOptionPane.INFORMATION_MESSAGE, this.icon);
-            return 1;   
+            this.saldo += pilas;               
         }
         
          /**
@@ -119,8 +117,9 @@ public class GerenciaBanco {
                     
                     try {// verifica se a entrada e do tipo numeral
                         double pilaDeposito = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+cliente1.nome+" "+cliente1.sobrenome));
+                        cliente1.depositaPila(pilaDeposito, cliente1.nome);
                         
-                        cliente1.saldo += pilaDeposito;
+                        //cliente1.saldo += pilaDeposito;
                         JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+cliente1.consultaPilas(cliente1.nome)+" Reais", cliente1.nome, JOptionPane.INFORMATION_MESSAGE, icon);
                     }
                     
