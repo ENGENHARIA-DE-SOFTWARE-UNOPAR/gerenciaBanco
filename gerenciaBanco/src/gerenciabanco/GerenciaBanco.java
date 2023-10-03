@@ -8,6 +8,7 @@ import java.awt.*;
 import java.lang.Integer;
 import java.lang.Exception;
 import java.lang.Error;
+import java.lang.reflect.Method;
 /**
  *
  * @author Natan Ogliari
@@ -43,9 +44,14 @@ public class GerenciaBanco {
         * @return 1 se deu certo e 0 se ocorreu um erro
         */
         public int saquePila(double pilas, String nome){
-        
             
-            return 1;
+            if (true){
+            
+                return 1;
+            }
+            else{
+                return 0;
+            }
         }
         
          /**
@@ -54,9 +60,8 @@ public class GerenciaBanco {
         * @return O saldo da conta
         */
         public double consultaPilas(String nome){
-            pilas = this.saldo;
-        
-        return pilas;
+            //double pilas = this.saldo;
+            return this.saldo;
         }
     
     }
@@ -105,40 +110,40 @@ public class GerenciaBanco {
             }
             switch (control){
                 case 1://consulta de saldo
+                    //double temp = cliente1.consultaPilas(cliente1.nome);
                     JOptionPane.showMessageDialog(null,"Consulta saldo.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
-                    JOptionPane.showMessageDialog(null,"Seu saldo atual é de: R$" +cliente1.saldo, cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
+                    JOptionPane.showMessageDialog(null,"Seu saldo atual é de: R$" +cliente1.consultaPilas(cliente1.nome), cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     break;
                 case 2://realiza deposito
                     JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);                
                     
                     try {// verifica se a entrada e do tipo numeral
-                        int pilaDeposito = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+cliente1.nome+" "+cliente1.sobrenome));
+                        double pilaDeposito = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+cliente1.nome+" "+cliente1.sobrenome));
                         
-                        pilaDeposito +=(Integer.parseInt(cliente1.saldo));//converte para inteiro
-                        cliente1.saldo =  Integer.toString(pilaDeposito);//converte para string
-                        JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+cliente1.saldo+" Reais", cliente1.nome, JOptionPane.INFORMATION_MESSAGE, icon);
+                        cliente1.saldo += pilaDeposito;
+                        JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+cliente1.consultaPilas(cliente1.nome)+" Reais", cliente1.nome, JOptionPane.INFORMATION_MESSAGE, icon);
                     }
                     
                     catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
-                        JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n Use (.) ponto em vez de (,) virgula\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
                     }
                     
                     break;
                 case 3:// realiza saque
                     JOptionPane.showMessageDialog(null,"Realiza um saque.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     try {// tratamento de exception
-                        int pilaSaque = Integer.parseInt(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser sacada na conta do "+cliente1.nome+" "+cliente1.sobrenome));
-                        int saldoAtual = Integer.parseInt(cliente1.saldo);//Variavel TEMP com conversão
+                        double pilaSaque = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser sacada na conta do "+cliente1.nome+" "+cliente1.sobrenome));
+                       
+                       
+                        //saquePila(pilaSaque, temp);
                         
-                        if (saldoAtual >= pilaSaque){//verifica se tem saldo
-                            saldoAtual -= pilaSaque; 
-                            cliente1.saldo = Integer.toString(saldoAtual);//converte para String              
+                        if (cliente1.saldo >= pilaSaque){//verifica se tem saldo
+                            cliente1.saldo -= pilaSaque; 
+                                       
                         }
                         else{
                             JOptionPane.showMessageDialog(null,"O valor informado para o saque é maior que seu saldo.\n seu saldo é de: R$ "+cliente1.saldo, "Saldo Insuficiente", JOptionPane.ERROR_MESSAGE, icon);
                         }
-                        
-                        //JOptionPane.showMessageDialog(null,"valor total: R$"+cliente.saldo+ " Reais", cliente.nome, JOptionPane.INFORMATION_MESSAGE, icon);
                         
                     }   
                     catch (NumberFormatException e){
