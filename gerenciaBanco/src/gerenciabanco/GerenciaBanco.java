@@ -19,14 +19,10 @@ public class GerenciaBanco {
         String nome;
         String sobrenome;
         String cpf;
-        String conta;
+        //String conta;
         String saldo;
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
-        
-        public void Conta(){
-            int numConta;
-            double saldo;
-        }    
+          
          /**
         * @param args Pilas a ser depositado & nome da conta
         */
@@ -35,6 +31,9 @@ public class GerenciaBanco {
             //this.saldo += pilas;
             //JOptionPane.showMessageDialog(null,"Seu Saldo é ", this.saldo, JOptionPane.INFORMATION_MESSAGE, this.icon);
                    
+        }
+        public void saquePila(double pilas, String nome){
+        
         }
     
     }
