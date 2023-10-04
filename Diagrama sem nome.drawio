@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-03T12:37:44.119Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="xAA5RZigPOE17Pp0x72E" version="22.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-04T14:05:34.178Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="XZHYG-axBunN5wEyvfMG" version="22.0.2" type="github">
   <diagram name="Página-1" id="QJd_to68Mrk2Ag7c-s2o">
-    <mxGraphModel dx="472" dy="740" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="750" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -17,7 +17,7 @@
         <mxCell id="-WMo9jtsm9AbzMqQrjDE-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="-WMo9jtsm9AbzMqQrjDE-4" vertex="1">
           <mxGeometry y="90" width="330" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="-WMo9jtsm9AbzMqQrjDE-7" value="+ saquePila (double pilas, String nome) : double&lt;br&gt;+ depositaPila (double pilas, String nome) : void&lt;br&gt;+ consultaPila (String nome) : double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-WMo9jtsm9AbzMqQrjDE-4" vertex="1">
+        <mxCell id="-WMo9jtsm9AbzMqQrjDE-7" value="+ saquePila (String nome) : int&lt;br&gt;+ depositaPila (String nome) : int&lt;br&gt;+ consultaPila (String nome) : int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="-WMo9jtsm9AbzMqQrjDE-4" vertex="1">
           <mxGeometry y="98" width="330" height="62" as="geometry" />
         </mxCell>
       </root>
