@@ -4,17 +4,14 @@
 
 \noindent \begin{minipage}[c]{0.6\textwidth}
   \vspace {1cm}
-  \begin{description}
-    \item [Banana] Exemplo de mini página com figura e seus respectivos rotulos, para que sejam referenciados ao decorrer do texto.
-    \item [Maça] Veja que a Figura \ref{fig:place}, está reservando um espaço para adição de figuras, e o mesmo já esta referenciando seu autor e sua nomeclatura com o indice automatico.
-  \end{description}
+  \par Esta presente aula pratica tem por fim a aplicação dos paradigmas da linguagem orientada a objetos com a linguagem de programação Java\ref{fig:log_java}.
 
 \end{minipage}
 \begin{minipage}[c]{0.4\textwidth}
 
-  \includegraphics[width=\textwidth]{figure/placeholder.jpg}
-  	\label{fig:place}
-    \captionof{figure}{Placeholder, \cite{linux:2023}}
+  \includegraphics[width=\textwidth]{figure/log_java.jpg}
+  	\label{fig:log_java}
+    \captionof{figure}{Logo Java, \cite{logJava}}
     %\captionof*{figure}{Fonte: \citeonline{linux:2023}}
 \end{minipage}
 
@@ -29,9 +26,33 @@
 
 
 
-\subsection{Código externo no main.c}
+\subsection{Operações das classes}
 
-%\lstinputlisting[language=java]{GerenciaBanco.java} %Busca os codigos na pasta /cod
+\begin{lstlisting}[language=Java, caption=consultaPilas, label=consultaPilas]
+    /**
+     * @param nome da conta a ser consultado
+     * @return O saldo da conta
+     */
+     public double consultaPilas(String nome){
+
+         return this.saldo;
+     }
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Java, caption=depositoPilas, label=depositaPilas]
+    /**
+   * @param nome da conta a ser depositado
+   * @return 1 se deu certo e 0 se ocorreu um erro
+   */
+   public void depositaPila(double pilas, String nome){
+
+       this.saldo += pilas;
+   }
+\end{lstlisting}
+
+
+%\lstinputlisting[language=Java]{GerenciaBanco.java} %Busca os codigos na pasta /cod
 
 
 

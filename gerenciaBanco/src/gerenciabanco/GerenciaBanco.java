@@ -53,12 +53,11 @@ public class GerenciaBanco {
         }
         
          /**
-        * @param nome da conta a ser consultado
-        *
-        * @return O saldo da conta
+        * @param nome Passa o nome da conta a ser consultada
+        * @return Retorna o saldo da conta
         */
         public double consultaPilas(String nome){
-            //double pilas = this.saldo;
+            
             return this.saldo;
         }
     
@@ -157,5 +156,19 @@ public class GerenciaBanco {
         }
                
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
