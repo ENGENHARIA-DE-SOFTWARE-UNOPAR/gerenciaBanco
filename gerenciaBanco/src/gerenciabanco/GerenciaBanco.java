@@ -22,18 +22,35 @@ public class GerenciaBanco {
         String nome;
         String sobrenome;
         String cpf;
-        //String conta;
         double saldo;
+        
+        private static final int STATUS_OK = 1;//!<define um retorno caso de sucesso> 
+        private static final int STATUS_FAIL = 0;//!<define um retorno caso de falha>
+        
+        
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
           
          /**
         * @param nome da conta a ser depositado
-        * 
         * @return 1 se deu certo e 0 se ocorreu um erro
         */
-        public void depositaPila(double pilas, String nome){
+        public int depositaPila(String nome){
             
-            this.saldo += pilas;               
+                
+            
+            
+            try {// verifica se a entrada e do tipo numeral
+               double pilaDeposito = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+this.nome+" "+this.sobrenome));
+                 this.saldo += pilaDeposito;                                     
+                JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+this.consultaPilas(this.nome)+" Reais", this.nome, JOptionPane.INFORMATION_MESSAGE, icon);
+                return STATUS_OK;
+            }
+                    
+            catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
+                JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n Use (.) ponto em vez de (,) virgula\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
+                return STATUS_FAIL;
+            }
+
         }
         
          /**
@@ -45,10 +62,10 @@ public class GerenciaBanco {
             
             if (true){
             
-                return 1;
+                return STATUS_OK;
             }
             else{
-                return 0;
+                return STATUS_FAIL;
             }
         }
         
@@ -90,13 +107,8 @@ public class GerenciaBanco {
             String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
             //conversão de String para int
             int control = Integer.parseInt(opcao);
-            /** Object[] itens = {"Saque","Consulta Saldo","Realiza Saque","Sair"};//!<Para melhorias>
-            Object valorSelecionado = JOptionPane.showInputDialog(null,"Escolha um item", "Opçao",JOptionPane.INFORMATION_MESSAGE, null,itens, itens [0]);
-            } */
-            
-            
-      
-            
+                  
+                              
             if ("opcao"  == null){//caso o usuario cancele a opção
                 JOptionPane.showMessageDialog(null, "Você cancelou a operação");
                 break;            
@@ -113,17 +125,11 @@ public class GerenciaBanco {
                     break;
                 case 2://realiza deposito
                     JOptionPane.showMessageDialog(null,"Realizar um deposito.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);                
+                    int verifica = cliente1.depositaPila(cliente1.nome);
+                    if (verifica == 1){
                     
-                    try {// verifica se a entrada e do tipo numeral
-                        double pilaDeposito = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+cliente1.nome+" "+cliente1.sobrenome));
-                        cliente1.depositaPila(pilaDeposito, cliente1.nome);
-                        
-                        //cliente1.saldo += pilaDeposito;
-                        JOptionPane.showMessageDialog(null,"Seu Saldo é R$:"+cliente1.consultaPilas(cliente1.nome)+" Reais", cliente1.nome, JOptionPane.INFORMATION_MESSAGE, icon);
-                    }
-                    
-                    catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
-                        JOptionPane.showMessageDialog(null,"Entre com valor válido, do tipo númeral.\n Use (.) ponto em vez de (,) virgula\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(null,"Falha no deposito.\n Tente novamente.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
                     }
                     
                     break;

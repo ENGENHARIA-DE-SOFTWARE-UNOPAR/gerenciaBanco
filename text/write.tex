@@ -4,7 +4,8 @@
 
 \noindent \begin{minipage}[c]{0.6\textwidth}
   \vspace {1cm}
-  \par Esta presente aula pratica tem por fim a aplicação dos paradigmas da linguagem orientada a objetos com a linguagem de programação Java\ref{fig:log_java}.
+  \par Esta presente aula prática tem por fim a aplicação dos paradigmas da linguagem orientada a objetos com a linguagem de programação Java\ref{fig:log_java}.
+  \par Para os procedimentos práticos foi sugerido o uso de nome $gerenciaBanco$, o qual será implementado. A finalidade desta aula prática, visa a implementação de um sistema de gerenciamento de banco, aonde o cliente deste banco irá acendero sistema atravéz de uma interface gráfica através da biblioteca $java.swing.*$, o menu deverá ser do tipo $loop$ o usuário deverá escolher a oção de finalizar a operação.
 
 \end{minipage}
 \begin{minipage}[c]{0.4\textwidth}
@@ -15,9 +16,33 @@
     %\captionof*{figure}{Fonte: \citeonline{linux:2023}}
 \end{minipage}
 
+\par As funções para este programa são:
+\begin{itemize}
+  \item Incerção das credenciais (Nome, Sobrenome e cpf);
+  \item Consulta de saldo;
+  \item Depósito;
+  \item Saque;
+  \item Finaliza a operação com uma mensagem de despedida;
+\end{itemize}
 
 \section{Métodos}
+\par Para a organização desta aula prática foi conficcionado um diagrama UML para o programa, conforme demonstra a figura \ref{fig:uml}
 
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{figure/uml_classe.png}
+  \caption{Diagirama UML, O autor}
+  \label{fig:uml}
+\end{figure}
+\newpage
+\par Os atributos defenidos são:
+\begin{itemize}
+  \item name : String
+  \item sobrenome : String
+  \item cpf : String
+  \item saldo : double
+\end{itemize}
+
+\par segundo boas práticas de programação, é sugerido que realize estencivamente controle de erros, e para tal, a criação de constatnte de verificação em vez de zeros e uns (0,1), do tipo $private static final int  STATUS\_OK = 1;$.
 
 \section{Resultados}
 
@@ -26,12 +51,14 @@
 
 
 
-\subsection{Operações das classes}
+\subsection{Métodos das classes}
+
+\par Os métodos definem as ações da classe, eu acesso é $minhaClasse.meuMetodo(args)$
 
 \begin{lstlisting}[language=Java, caption=consultaPilas, label=consultaPilas]
     /**
      * @param nome da conta a ser consultado
-     * @return O saldo da conta
+     * @return Retorna o saldo da conta
      */
      public double consultaPilas(String nome){
 
