@@ -6,11 +6,11 @@
 ## Faz uso da funcionalidade <code> .gitignore </code>, para que o repositório fique enxuto.
 
 
-### Bibliotecas usadas ~~JAVA~~
-<code>
-import java.awt
-
-</code>
+### Bibliotecas usadas `java´
+~~~java
+import java.
+~~~
+o codigo usado é `java`
 
 
 
@@ -18,4 +18,4 @@ import java.awt
 
  - [x] Atom
  - [x] Netbeans
- - [ ] Draw.io
+ - [x] Draw.io
