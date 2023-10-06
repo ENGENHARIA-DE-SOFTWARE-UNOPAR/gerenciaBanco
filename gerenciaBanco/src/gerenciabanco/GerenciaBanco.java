@@ -26,7 +26,8 @@ public class GerenciaBanco {
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
           
         /**
-        * @param nome da conta a ser depositado
+        * Realiza um deposito em uma conta
+        * @param nome Informa o nome da conta a ser depositado
         * @return retorna STATUS_OK se a operação ocorreu com sucesso e retorna STATUS_FAIL se ocorrer um erro
         */
         public int depositaPila(String nome){
@@ -45,7 +46,8 @@ public class GerenciaBanco {
         }
         
         /**
-        * @param nome da conta a ser saquada 
+        * Realiza o saque de uma conta
+        * @param nome Informa o nome da conta a ser realizado o saque 
         * @return retorna STATUS_OK se a operação ocorreu com sucesso e retorna STATUS_FAIL se ocorrer um erro
         */
         public int saquePila(String nome){
@@ -68,6 +70,7 @@ public class GerenciaBanco {
         }
         
         /**
+        * Realiza a consulta do saldo de uma conta
         * @param nome Passa o nome da conta a ser consultada e informa o saldo ao cliente.
         */
         public void consultaPilas(String nome){
