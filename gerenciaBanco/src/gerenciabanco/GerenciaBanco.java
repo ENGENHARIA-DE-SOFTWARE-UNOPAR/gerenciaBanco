@@ -81,14 +81,13 @@ public class GerenciaBanco {
     public static void main(String[] args) {
        
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
-        String opcao = null;
+       
         cliente cliente1 = new cliente();//instância o cliente
         JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
         try {
             cliente1.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
-            if ("opcao"  == null){//caso o usuario cancele a opção
+            if (cliente1.nome  == null){//caso o usuario cancele a opção
                 JOptionPane.showMessageDialog(null, "Você cancelou a operação");
-                            
             }
         }
         catch (NullPointerException e){
@@ -111,7 +110,7 @@ public class GerenciaBanco {
         //cliente1.saldo = 445;//remover
         while(true){ //InterruptedIOException
             
-            opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
+            String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
             //conversão de String para int
             int control = 0;
             if ("opcao" == null){
@@ -140,6 +139,10 @@ public class GerenciaBanco {
             }
             
             switch (control){
+                case 0:
+                    JOptionPane.showMessageDialog(null, "Você cancelou a operação");
+                    break;
+                
                 case 1://consulta de saldo   consultaPilas(nome) 
                     JOptionPane.showMessageDialog(null,"Consulta saldo.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
                     cliente1.consultaPilas(cliente1.nome);  
