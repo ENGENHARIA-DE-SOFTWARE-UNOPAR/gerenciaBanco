@@ -6,6 +6,7 @@
 ## Faz uso da funcionalidade <code> .gitignore </code>, para que o repositório fique enxuto.
 
 
+
 ### Bibliotecas utilizadas
 ~~~java
 import java.util.*;
@@ -17,6 +18,7 @@ import java.lang.Exception;
 import java.lang.Error;
 import java.lang.reflect.Method;
 ~~~
+
 
 
 ## SOFTWARES:
