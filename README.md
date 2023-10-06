@@ -19,6 +19,10 @@ import java.lang.Error;
 import java.lang.reflect.Method;
 ~~~
 
+### Relatório & Roteiro
+
+* Confira aqui o <a href="https://github.com/OgliariNatan/gerenciaBanco/blob/main/main.pdf"> relatório final</a>
+* Confira aqui o <a href="https://github.com/OgliariNatan/gerenciaBanco/blob/main/Aula%20pr%C3%A1tica.pdf"> roteiro da aula prática</a>
 
 
 ## SOFTWARES:

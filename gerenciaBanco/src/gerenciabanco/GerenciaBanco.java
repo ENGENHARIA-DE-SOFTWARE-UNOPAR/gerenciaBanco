@@ -162,19 +162,5 @@ public class GerenciaBanco {
         }
                
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+       
 }
