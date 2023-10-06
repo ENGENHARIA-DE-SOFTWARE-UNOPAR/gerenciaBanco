@@ -81,30 +81,57 @@ public class GerenciaBanco {
     public static void main(String[] args) {
        
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
-        
-        cliente cliente1 = new cliente();//instancia a cliente
+        String opcao = null;
+        cliente cliente1 = new cliente();//instância o cliente
         JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
-
         try {
             cliente1.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
-            
+            if ("opcao"  == null){//caso o usuario cancele a opção
+                JOptionPane.showMessageDialog(null, "Você cancelou a operação");
+                            
+            }
         }
         catch (NullPointerException e){
-            JOptionPane.showMessageDialog(null, "Entre com um nome válido.");
+            JOptionPane.showMessageDialog(null, "Entre com um Nome válido.","Erro" , JOptionPane.ERROR_MESSAGE);
         }
         
-        cliente1.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
-        cliente1.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
+        try {
+            cliente1.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
+        }
+        catch(NullPointerException e){
+            JOptionPane.showMessageDialog(null, "Entre com um sobrenome válido.","Erro" , JOptionPane.ERROR_MESSAGE);
+        }
+        
+        try{
+            cliente1.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
+        }
+        catch (NullPointerException e){
+            JOptionPane.showMessageDialog(null, "Entre com um CPF válido.","Erro" , JOptionPane.ERROR_MESSAGE);
+        }
         //cliente1.saldo = 445;//remover
         while(true){ //InterruptedIOException
             
-            String opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
+            opcao = JOptionPane.showInputDialog(null,"Opção 1 - Consulta saldo\n Opção 2 - Realizar um deposito\n Opção 3 - Realizar um saque\n Opção 4 - Sair \n",4);//deixa a opçã4 4 como deful
             //conversão de String para int
-            int control = Integer.parseInt(opcao);
-                           
+            int control = 0;
+            if ("opcao" == null){
+                
+                control = 0;
+            }            
+            else {
+                 control = Integer.parseInt(opcao);
+            }  
+            
+            //int control = Integer.parseInt(opcao);
+            
             if ("opcao"  == null){//caso o usuario cancele a opção
                 JOptionPane.showMessageDialog(null, "Você cancelou a operação");
                 break;            
+            }
+            
+            if (control == 0){
+                JOptionPane.showMessageDialog(null, "Você cancelou a operação");
+                break;  
             }
             
             if (control == 4){//para sair da operação
