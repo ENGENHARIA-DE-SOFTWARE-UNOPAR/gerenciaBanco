@@ -6,11 +6,18 @@
 ## Faz uso da funcionalidade <code> .gitignore </code>, para que o repositório fique enxuto.
 
 
-### Bibliotecas usadas `java´
+
+### Bibliotecas utilizadas
 ~~~java
-import java.
+import java.util.*;
+//import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.awt.*;
+import java.lang.Integer;
+import java.lang.Exception;
+import java.lang.Error;
+import java.lang.reflect.Method;
 ~~~
-o codigo usado é `java`
 
 
 
