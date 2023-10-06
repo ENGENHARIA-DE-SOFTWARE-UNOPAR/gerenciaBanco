@@ -27,7 +27,7 @@
 *.gz
 /gerenciaBanco/nbproject/private/
 /gerenciaBanco/build/
-/gerenciaBanco/dist/
+#/gerenciaBanco/dist/
 
 *.xml
 *.mf
