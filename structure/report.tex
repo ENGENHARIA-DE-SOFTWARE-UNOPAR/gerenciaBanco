@@ -6,7 +6,6 @@
 %\usepackage[brazilian]{babel} %Portugues Brasileiro
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
-%\usepackage[latin1]{inputenc}
 \usepackage{color, ucs}
 \usepackage[table, xcdraw, dvipsnames]{xcolor}
 \usepackage{subfigure}
@@ -75,7 +74,8 @@
 \usepackage{float}
 
 %Para uso de codigos externos
-\usepackage{listings}
+%\usepackage{listings}
+\usepackage{listingsutf8}
 
 
 %%%%QRCODE
@@ -207,5 +207,8 @@
   breakautoindent=true,
   captionpos=b,
   xleftmargin=0pt,
+  inputencoding=utf8/latin1,
+  extendedchars=true,
+  literate={á}{{\'a}}1 {à}{{\`a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1 {í}{{\'i}}1 {ç}{{\c{c}}}1 {Ç}{{\c{C}}}1 {õ}{{\~o}}1 {ó}{{\'o}}1 {ô}{{\^o}}1 {ú}{{\'u}}1,
 }
 %\pagestyle{empty}

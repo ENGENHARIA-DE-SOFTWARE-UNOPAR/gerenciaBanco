@@ -12,7 +12,7 @@
 
   \includegraphics[width=\textwidth]{figure/log_java.jpg}
   	\label{fig:log_java}
-    \captionof{figure}{Logo Java, \cite{logJava}}
+    \captionof{figure}{Logo Java, \citeonline{logJava}}
     %\captionof*{figure}{Fonte: \citeonline{linux:2023}}
 \end{minipage}
 
@@ -25,12 +25,28 @@
   \item Finaliza a operação com uma mensagem de despedida;
 \end{itemize}
 
-\section{Métodos}
-\par Para a organização desta aula prática foi conficcionado um diagrama UML para o programa, conforme demonstra a figura \ref{fig:uml}
+\par Segundo \citeonline{freecodecamp:2023}, a linguagem orientata a objetos se define em quatro pilares, sendo elas: herança, encapsulamento, abstração e poliformismo. Isso permite definir, neste caso, umas características de \textbf{cliente}, e utiliza-lós inúmeras vezes sem a necessidade de rescreve-lá.
 
-\begin{figure}[h]
+\section{Métodos}
+\par De forma continua as instruções do \href{https://github.com/OgliariNatan/gerenciaBanco/blob/main/Aula%20pr%C3%A1tica.pdf}{roteiro da aula prática}, é criado o projeto em java conoforma figura \ref{fig:project}.
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[Início projeto.\label{fig:pro1}]{\includegraphics[scale=.4]{figure/fig_1.jpg}}
+  \subfigure[Nome projeto.\label{fig:pro2}]{\includegraphics[scale=.4]{figure/fig_2.jpg}}
+  \subfigure[Projeto em branco.\label{fig:pro3}]{\includegraphics[scale=.4]{figure/fig_3.jpg}}
+  \caption{Projeto java, O autor (2023)}\label{fig:project}
+
+\end{figure}
+
+\newpage
+
+
+\par Para a organização desta aula prática foi confeccionado um diagrama UML para o programa, conforme demonstra a figura \ref{fig:uml}
+
+\begin{figure}[h!]
   \includegraphics[width=\textwidth]{figure/uml_classe.png}
-  \caption{Diagirama UML, O autor}
+  \caption{Diagrama UML, O autor (2023)}
   \label{fig:uml}
 \end{figure}
 \newpage
@@ -42,7 +58,8 @@
   \item saldo : double
 \end{itemize}
 
-\par segundo boas práticas de programação, é sugerido que realize estencivamente controle de erros, e para tal, a criação de constatnte de verificação em vez de zeros e uns (0,1), do tipo $private static final int  STATUS\_OK = 1;$.
+\par Seguindo boas práticas de programação, define-se variáveis de controle de erros, e para tal, a criação de constatnte de verificação em vez de zeros e uns (0,1), do tipo $private static final int  STATUS\_OK = 1;$ e $private static final int STATU\_FAIL = 0;$.
+\par De forma sequente foi prosseguido com as instruções do \href{https://github.com/OgliariNatan/gerenciaBanco/blob/main/Aula%20pr%C3%A1tica.pdf}{roteiro da aula prática}.
 
 \section{Resultados}
 
@@ -57,24 +74,33 @@
 
 \begin{lstlisting}[language=Java, caption=consultaPilas, label=consultaPilas]
     /**
-     * @param nome da conta a ser consultado
-     * @return Retorna o saldo da conta
-     */
+    * Realiza a consulta do saldo de uma conta
+    * @param nome Passa o nome da conta a ser consultada e informa o saldo ao cliente.
+    */
      public double consultaPilas(String nome){
-
-         return this.saldo;
+     JOptionPane.showMessageDialog(null,"Seu saldo atual e de: R$" +this.saldo, this.nome+" "+this.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
      }
 
 \end{lstlisting}
 
 \begin{lstlisting}[language=Java, caption=depositoPilas, label=depositaPilas]
-    /**
-   * @param nome da conta a ser depositado
-   * @return 1 se deu certo e 0 se ocorreu um erro
+  /**
+   * Realiza um depósito em uma conta
+   * @param nome Informa o nome da conta a ser depositado
+   * @return retorna STATUS_OK se a operacao ocorreu com sucesso e retorna STATUS_FAIL se ocorrer um erro
    */
-   public void depositaPila(double pilas, String nome){
+   public void depositaPila( String nome){
+          try {// verifica se a entrada e do tipo numeral
+              double pilaDeposito = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+this.nome+" "+this.sobrenome));
+                this.saldo += pilaDeposito;
+               //JOptionPane.showMessageDialog(null,"Seu Saldo e R$:"+this.consultaPilas(this.nome)+" Reais", this.nome, JOptionPane.INFORMATION_MESSAGE, icon);
+               return STATUS_OK;
+           }
 
-       this.saldo += pilas;
+           catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
+               JOptionPane.showMessageDialog(null,"Entre com valor valido, do tipo numeral.\n Use (.) ponto em vez de (,) virgula\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
+               return STATUS_FAIL;
+           }
    }
 \end{lstlisting}
 
@@ -86,17 +112,6 @@
 
 
 
-\begin{equation}
-S = \left\{
-\begin{aligned}
-  a + b     &= 4\\
-  a \cdot b &= 4
-\end{aligned}
-\right.
-$$ $$% Usado para pular linha [não recomendado]
-\sum_{n<k,\;\text{$n$ odd}} nE_n
- \label{1}
-\end{equation}
 
 
 \section{Conclusões}

@@ -173,8 +173,6 @@ public class GerenciaBanco {
                     JOptionPane.showMessageDialog(null,"Opção inválida.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);  
                     break;
             }
-        }
-               
+        }     
     }
-       
 }
