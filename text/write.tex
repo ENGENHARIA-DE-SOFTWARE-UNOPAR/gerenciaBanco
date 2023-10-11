@@ -28,7 +28,10 @@
 \par Segundo \citeonline{freecodecamp:2023}, a linguagem orientata a objetos se define em quatro pilares, sendo elas: herança, encapsulamento, abstração e poliformismo. Isso permite definir, neste caso, umas características de \textbf{cliente}, e utiliza-lós inúmeras vezes sem a necessidade de rescreve-lá.
 
 \section{Métodos}
-\par De forma continua as instruções do \href{https://github.com/OgliariNatan/gerenciaBanco/blob/main/Aula%20pr%C3%A1tica.pdf}{roteiro da aula prática}, é criado o projeto em java conforme figura \ref{fig:project}. E denominado de \textit{gerenciaBanco}.
+\par Para a confecção desta aula prática, foi criado um \href{https://github.com/OgliariNatan/gerenciaBanco}{repositório no \textbf{Github}}, com o objetivo do aplicar os controle de versões e a utilização do sistema \textit{git} em geral, o relatório foi confeccionado em \LaTeX\, com o objetivo da abstração da formatação do texto ficando livre para o aprofundamento na questão textual.
+
+
+\par De forma subsequente as instruções do \href{https://github.com/OgliariNatan/gerenciaBanco/blob/main/Aula%20pr%C3%A1tica.pdf}{roteiro da aula prática} é criado um projeto no NetBeans em java conforme figura \ref{fig:project}.
 
 \begin{figure}[h!]
   \centering
@@ -36,21 +39,23 @@
   \subfigure[Nome projeto.\label{fig:pro2}]{\includegraphics[scale=.4]{figure/fig_2.jpg}}
   \subfigure[Projeto em branco.\label{fig:pro3}]{\includegraphics[scale=.4]{figure/fig_3.jpg}}
   \caption{Projeto java, O autor (2023)}\label{fig:project}
-
 \end{figure}
 
 \newpage
 
+\par Na figura \ref{fig:pro1} solicita o tipo de projeto a ser criado, no caso \textit{Java Application}, na figura \ref{fig:pro2} é solicitado o local aonde o projeto será salvo e o nome do mesmo, deste modo o nome foi definido conforme sugestão do roteiro \textit{gerenciaBanco} e na figura \ref{fig:pro3} demonstra a criação do projeto em \textbf{branco} já com a inclusão do pacote \textit{gerenciabanco},após  estes passos foi prossegido com a programação do que foi solicitado ao discente.
 
-\par Para a organização desta aula prática foi confeccionado um diagrama UML para o programa, conforme demonstra a figura \ref{fig:uml}
+\par Para organização desta aula prática foi confeccionado um diagrama UML para o programa, conforme demonstra a figura \ref{fig:uml}
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{figure/uml_classe.png}
   \caption{Diagrama UML, O autor (2023)}
   \label{fig:uml}
 \end{figure}
+
 \newpage
-\par Os atributos defenidos são:
+
+\par Forãm definidos atributos para a classe e o mesmos são:
 \begin{itemize}
   \item name : String
   \item sobrenome : String
@@ -58,19 +63,19 @@
   \item saldo : double
 \end{itemize}
 
-\par Seguindo boas práticas de programação, define-se variáveis de controle de erros, e para tal, a criação de constatnte de verificação em vez de zeros e uns (0,1), do tipo $private static final int  STATUS\_OK = 1;$ e $private static final int STATU\_FAIL = 0;$.
-\par De forma sequente foi prosseguido com as instruções do \href{https://github.com/OgliariNatan/gerenciaBanco/blob/main/Aula%20pr%C3%A1tica.pdf}{roteiro da aula prática}.
+\par Seguindo boas práticas de programação, define-se variáveis de controle de erros, e para tal, a criação de constatnte de verificação em vez de zeros e uns (0,1), do tipo $private static final int  STATUS\_OK = 1;$ e $private static final int STATUS\_FAIL = 0;$.
+
 
 \section{Resultados}
 
-
+\par Após a criação dos repositórios e do projeto, prossegue com a confecção do código\footnote{\hyperref[anexo]{código completo}}, no decorrer desta seção será incluido figuras dos resultados da presente aula.
 
 
 
 
 \subsection{Métodos das classes}
 
-\par Os métodos definem as ações da classe, eu acesso é $minhaClasse.meuMetodo(args)$
+\par Os métodos definem as ações da classe, e o acesso é $minhaClasse.meuMetodo(args)$
 
 \begin{lstlisting}[language=Java, caption=consultaPilas, label=consultaPilas]
     /**
@@ -80,8 +85,9 @@
      public double consultaPilas(String nome){
      JOptionPane.showMessageDialog(null,"Seu saldo atual e de: R$" +this.saldo, this.nome+" "+this.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
      }
-
 \end{lstlisting}
+
+
 
 \begin{lstlisting}[language=Java, caption=depositoPilas, label=depositaPilas]
   /**
@@ -109,17 +115,9 @@
 
 \section{Conclusões}
 
+\par Esta aula prática teve como fim a aplicação de conhecimentos adquiridos em sala de aula virtuais da disciplina de linguagem orientada a objetos do curso bacharel em engenharia de software da faculdade UNOPAR,
 
-\begin{enumerate}[label=\Roman{*}, ref=(\roman{*})]
-  \item fsfsdf
-  \item kugfhiuh
-\end{enumerate}
-
-\begin{asparaenum}
-\item Anterior ... \cite{ninguem2022curioso}
-\item Próximo ... \label{pl1}
-\end{asparaenum}
-
+o código completo\footnote{\hyperref[anexo]{código completo}}  pode ser visto nos anexos\ref{anexo} deste documento.
 
   %$X \xLongleftarrow[\text{NATAN}]{\text{OGLIARI}} Y $ %COM TEXTO
 	% $\uparrow$ %Seta para Cima
