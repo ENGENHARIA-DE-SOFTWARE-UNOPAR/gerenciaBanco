@@ -53,7 +53,7 @@ public class GerenciaBanco {
         public int saquePila(String nome){
             
             try {// tratamento de exception
-                   if (this.saldo > 0){
+                   if (this.saldo == 0){
                        return STATUS_FAIL;
                    }
                     double pilaSaque = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser sacada na conta do "+this.nome+" "+this.sobrenome));  

@@ -75,13 +75,48 @@
 
 \subsection{Métodos das classes}
 
-\par Os métodos definem as ações da classe, e o acesso é $minhaClasse.meuMetodo(args)$
+\par Os métodos definem as ações da classe, e o acesso é $minhaClasse.meuMetodo(args)$, foram definidos três métodos, sendo eles:
+\begin{itemize}
+  \item \textit{consultaPila()} Responsavél pela conulta do saldo do cliente, conforme código \ref{cod:consultaPila};
+  \item \textit{depositoPila()} Responsavél pelo depósito na conta do cliente, conforme código \ref{cod:depositoPila} e
+  \item \textit{saquePila()} Responsavél pelo saque na conta do clinte, conforme código \ref{cod:saquePila}.
+\end{itemize}
 
-\lstinputlisting[language=Java, firstline=723, lastline=80, caption=consultaPilas, label=cod:consultaPilas]{GerenciaBanco.java}
 
-\lstinputlisting[language=Java, firstline=26, lastline=47, caption=depositoPilas, label=cod:depositoPilas]{GerenciaBanco.java}
+\lstinputlisting[language=Java, firstline=75, lastline=82, caption=consultaPila(), label=cod:consultaPila]{GerenciaBanco.java}
+
+\lstinputlisting[language=Java, firstline=28, lastline=46, caption=depositoPila(), label=cod:depositoPila]{GerenciaBanco.java}
+
+\lstinputlisting[language=Java, firstline=48, lastline=73, caption=saquePila(), label=cod:saquePila]{GerenciaBanco.java}
+
+\par É solicitado que crie um \textit{loop}, para que o usuário escolha quando deseja sair da operação, portanto o código para tal é o código \ref{cod:loop} e a figura \ref{fig:loop}.
+
+\lstinputlisting[language=Java, firstline=115, lastline=180, caption=loop, label=cod:loop]{GerenciaBanco.java}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.8]{figure/menu.jpg}
+  \caption{Interface gráfica do loop, O autor(2023)}\label{fig:loop}
+\end{figure}
+
+\par Foi confeccionado uma interface gráfica para o usuario, conforme demonstra as figuras \ref{fig:face}
+
+\begin{figure}[h!]
+  \centering
+  \subfigure[Menu.\label{fig:menu}]{\includegraphics[scale=.8]{figure/menu.jpg}}
+  \caption{Interface gráfica com o usuário.}\label{fig:face}
+\end{figure}
 
 
+
+
+\par Para este projeto foi utilizado os comentários no formato do \href{https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html}{\textit{javadoc}}, e conforme a figura \ref{fig:javadoc}, demonstra a documentação deste projeto gerada automaticamente pelo NetBeans.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\textwidth]{figure/java_doc.png}
+  \label{fig:javadoc}
+  \caption{Documentação do projeto pelo javadoc, O autor (2023)}
+\end{figure}
 
 \section{Conclusões}
 
