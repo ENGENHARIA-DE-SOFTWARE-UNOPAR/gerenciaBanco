@@ -77,39 +77,9 @@
 
 \par Os métodos definem as ações da classe, e o acesso é $minhaClasse.meuMetodo(args)$
 
-\begin{lstlisting}[language=Java, caption=consultaPilas, label=consultaPilas]
-    /**
-    * Realiza a consulta do saldo de uma conta
-    * @param nome Passa o nome da conta a ser consultada e informa o saldo ao cliente.
-    */
-     public double consultaPilas(String nome){
-     JOptionPane.showMessageDialog(null,"Seu saldo atual e de: R$" +this.saldo, this.nome+" "+this.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
-     }
-\end{lstlisting}
+\lstinputlisting[language=Java, firstline=723, lastline=80, caption=consultaPilas, label=cod:consultaPilas]{GerenciaBanco.java}
 
-
-
-\begin{lstlisting}[language=Java, caption=depositoPilas, label=depositaPilas]
-  /**
-   * Realiza um depósito em uma conta
-   * @param nome Informa o nome da conta a ser depositado
-   * @return retorna STATUS_OK se a operacao ocorreu com sucesso e retorna STATUS_FAIL se ocorrer um erro
-   */
-   public void depositaPila( String nome){
-          try {// verifica se a entrada e do tipo numeral
-              double pilaDeposito = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser depositado na conta do "+this.nome+" "+this.sobrenome));
-                this.saldo += pilaDeposito;
-               //JOptionPane.showMessageDialog(null,"Seu Saldo e R$:"+this.consultaPilas(this.nome)+" Reais", this.nome, JOptionPane.INFORMATION_MESSAGE, icon);
-               return STATUS_OK;
-           }
-
-           catch (NumberFormatException e) {// imprime o erro na tela e informa o que foi digitado.
-               JOptionPane.showMessageDialog(null,"Entre com valor valido, do tipo numeral.\n Use (.) ponto em vez de (,) virgula\n ERRO: " + e.getMessage()  , "ERRO", JOptionPane.ERROR_MESSAGE);
-               return STATUS_FAIL;
-           }
-   }
-\end{lstlisting}
-
+\lstinputlisting[language=Java, firstline=26, lastline=47, caption=depositoPilas, label=cod:depositoPilas]{GerenciaBanco.java}
 
 
 

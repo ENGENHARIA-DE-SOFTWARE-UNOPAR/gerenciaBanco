@@ -53,6 +53,9 @@ public class GerenciaBanco {
         public int saquePila(String nome){
             
             try {// tratamento de exception
+                   if (this.saldo > 0){
+                       return STATUS_FAIL;
+                   }
                     double pilaSaque = Double.parseDouble(JOptionPane.showInputDialog(null,"Informe a quantidade em Reais (R$) a ser sacada na conta do "+this.nome+" "+this.sobrenome));  
                     if (this.saldo >= pilaSaque){//verifica se tem saldo
                         this.saldo -= pilaSaque; 
@@ -73,20 +76,21 @@ public class GerenciaBanco {
         * Realiza a consulta do saldo de uma conta
         * @param nome Passa o nome da conta a ser consultada e informa o saldo ao cliente.
         */
-        public void consultaPilas(String nome){
+        public void consultaPila(String nome){
             JOptionPane.showMessageDialog(null,"Seu saldo atual é de: R$" +this.saldo, this.nome+" "+this.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);
         }
     }
 
     public static void main(String[] args) {
-       
+       /**Importa o logo do banco. */
         ImageIcon icon = new ImageIcon("C:\\Users\\AULA-1\\Documents\\(Engenharia de Software)\\Fase 3\\Linguagem Orientada a Objetos\\gerenciaBanco\\gerenciaBanco\\src\\gerenciabanco\\saracura.jpg");
        
-        cliente cliente1 = new cliente();//instância o cliente
+        /** Instância a classe */
+        cliente cliente1 = new cliente();
         JOptionPane.showMessageDialog(null,"Bem vindo ao Banco Saracura do Banhado\n", "INÍCIO", JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
-        try {
+        try {/** customer's name and checks for possible errors */
             cliente1.nome = JOptionPane.showInputDialog(null, "Informe seu Nome.", "Nome");
-            if (cliente1.nome  == null){//caso o usuario cancele a opção
+            if (cliente1.nome  == null){/**caso o usuário cancele a opção*/
                 JOptionPane.showMessageDialog(null, "Você cancelou a operação");
             }
         }
@@ -94,14 +98,14 @@ public class GerenciaBanco {
             JOptionPane.showMessageDialog(null, "Entre com um Nome válido.","Erro" , JOptionPane.ERROR_MESSAGE);
         }
         
-        try {
+        try {/** Solicita o sobrenome do cliente e verifica possiveis erros */
             cliente1.sobrenome = JOptionPane.showInputDialog(null, "Informe seu Sobrenome.","Sobrenome");
         }
         catch(NullPointerException e){
             JOptionPane.showMessageDialog(null, "Entre com um sobrenome válido.","Erro" , JOptionPane.ERROR_MESSAGE);
         }
         
-        try{
+        try{/** Solicita o cpf do cliente e verifica possiveis erros */
             cliente1.cpf = JOptionPane.showInputDialog(null, "Informe o numéro do CPF.","000.000.000-00");
         }
         catch (NullPointerException e){
@@ -145,7 +149,7 @@ public class GerenciaBanco {
                 
                 case 1://consulta de saldo   consultaPilas(nome) 
                     JOptionPane.showMessageDialog(null,"Consulta saldo.", cliente1.nome+" "+cliente1.sobrenome, JOptionPane.INFORMATION_MESSAGE, icon);//add custon icon
-                    cliente1.consultaPilas(cliente1.nome);  
+                    cliente1.consultaPila(cliente1.nome);  
                     break;
                 
                 case 2://realiza deposito
